@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SafeZone.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/GreenZone.unity
+    guid: 93f9be7191d5535479205f0e522255d4
+  - enabled: 1
+    path: Assets/Scenes/VioletZone.unity
+    guid: ea55065df9a712e429e7bd32bb9011b2
+  - enabled: 1
+    path: Assets/Scenes/DesertZone.unity
+    guid: a440a39e45204c043ba99f377c24f58a
+  - enabled: 1
+    path: Assets/Scenes/IceZone.unity
+    guid: 70d57c622c718b64c852ed4581120b51
+  - enabled: 1
+    path: Assets/Scenes/UnderWorldZone.unity
+    guid: 8ed390aa16670c24a9ac7f9593a93362
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 55653197a78b8104e9bed3b81f2b5c39, type: 2}
