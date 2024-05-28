@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee3ac48fa5ef244aafd27dcb5503593, type: 3}
   m_Name: FlyEye
   m_EditorClassIdentifier: 
-  EnemyPrefab: {fileID: 7276012302932819574, guid: fb2625a5b11da744ba0005f72ad2a50a, type: 3}
-  Health: 175
-  currentHealth: 0
+  Health: 170
   SpeedMove: 7
   enemyDamage: 10

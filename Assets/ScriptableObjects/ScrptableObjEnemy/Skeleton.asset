@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee3ac48fa5ef244aafd27dcb5503593, type: 3}
   m_Name: Skeleton
   m_EditorClassIdentifier: 
-  EnemyPrefab: {fileID: 4624211285144330220, guid: 33b061f1196abe746873c141df287407, type: 3}
   Health: 150
-  currentHealth: 0
-  SpeedMove: 5
+  SpeedMove: 4
   enemyDamage: 10

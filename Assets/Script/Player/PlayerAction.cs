@@ -22,12 +22,14 @@ public class PlayerAction : MonoBehaviour, IReceiveDamage
     [SerializeField] private Gradient healthGradient;
     [SerializeField] private Image healthImage;
 
-    //DashAbility/ Agregar Header.[Header("Dash Ability)]
-    // [SerializeField] private float dashSpeed;
-    // [SerializeField] private float dashDuration;
-    // [SerializeField] private float DashCD;
-    // private bool isDash;
-    // private bool canDash;
+    [Header("Dash Ability")]
+    [SerializeField] private float dashSpeed;
+    [SerializeField] private float dashDuration;
+    [SerializeField] private float DashCD;
+    private bool isDash ;
+    private bool canDash ;
+    private Vector3 dashDirection;
+    [SerializeField] private TrailRenderer trailDash;
     private void Awake() 
     {
         if (instance == null)
@@ -53,37 +55,37 @@ public class PlayerAction : MonoBehaviour, IReceiveDamage
         slider.value = playerData.currentHealth/playerData.Health;
         healthImage.color = healthGradient.Evaluate(slider.value);  
         playerAnim.SetBool("isHurt",false);    
-        // canDash = true;
+        canDash = true;
     }
-
-   
-
     private void Update() 
-    {
+    {   
         input = playerInput.actions["Movement"].ReadValue<Vector2>().normalized;   
-        AnimationPlayer();
+        AnimationPlayer();    
 
-        // if (isDash)
-        // {
-        //     return;
-        // }
     }
     private void FixedUpdate() 
     {
         Move();   
+        if(isDash)
+            {   
+                Debug.Log("Esta moviendose con Dash");
+                playerRb.MovePosition(transform.position+dashDirection*dashSpeed*Time.fixedDeltaTime);
+                return;
+            }
     }
     private void Move()
     {
         playerRb.MovePosition(playerRb.position+input*playerData.speedMove*Time.fixedDeltaTime);
     }
-
-    // public void Dash(InputAction.CallbackContext callbackContext)
-    // {
-    //     if (callbackContext.performed && canDash)
-    //     {   
-    //         StartCoroutine(Dashing());
-    //     }
-    // }
+    public void Dash(InputAction.CallbackContext callbackContext)
+    {
+        if (callbackContext.performed && canDash)
+        {   
+            //Debug.Log("Dash Activado"); 
+            dashDirection = input.normalized;
+            StartCoroutine(Dashing());
+        }
+    }
     public void AttackPlayer(InputAction.CallbackContext callbackContext)
     {
         if (callbackContext.performed)
@@ -104,26 +106,28 @@ public class PlayerAction : MonoBehaviour, IReceiveDamage
             playerAnim.SetBool("isMoving",false);    
            
         }
-
-
     }
     private void AttackAnimation()
     {
         playerAnim.SetTrigger("isAttack");
     }
 
-    // private IEnumerator Dashing()
-    // {
-    //     Debug.Log("Daaaaaashiiiiing");
-    //     canDash = false;
-    //     isDash = true;
-    //     playerRb.velocity = input*dashSpeed;
-    //     yield return new WaitForSeconds(dashDuration);
-    //     isDash = false;
-
-    //     yield return new WaitForSeconds(DashCD);
-    //     canDash = true;
-    // }
+    private IEnumerator Dashing()
+    {   
+        //Debug.Log("Iniciando Dash");
+        canDash = false;
+        isDash = true;
+        //Debug.Log("La Fuerza se va a Aplicar");
+        playerRb.MovePosition(transform.position+dashDirection*dashSpeed*Time.fixedDeltaTime);
+        //Debug.Log("Fuerza Aplicada");
+        trailDash.emitting = true;
+        yield return new WaitForSeconds(dashDuration);
+        isDash = false;
+        trailDash.emitting = false; 
+        yield return new WaitForSeconds(DashCD);
+        canDash = true;
+         //Debug.Log("Dash Finalizado");
+    }
     public void ReceiveDamage(int takeDamage)
     {   
         playerData.currentHealth -= takeDamage;

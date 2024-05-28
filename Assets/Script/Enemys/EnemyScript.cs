@@ -16,13 +16,14 @@ public class EnemyScript : MonoBehaviour,IReceiveDamage
     private Vector2 moveDirections;
     private Animator enemyAnim;
     private Rigidbody2D enemyRb;
+    [SerializeField] private float currentHealth;
     private void Start() 
     {
         enemyRb = GetComponent<Rigidbody2D>();
         enemyAnim = GetComponent<Animator>();
         timeChangeDirection = Random.Range(minChangeTime,maxChangeTime);   
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        enemyData.currentHealth = enemyData.Health;
+        currentHealth = enemyData.Health;
         slider.value = 1;
         GetRandomDirection();
     }
@@ -96,13 +97,12 @@ public class EnemyScript : MonoBehaviour,IReceiveDamage
         }
     }
 
-    public void ReceiveDamage(int damage)
+    public void ReceiveDamage(int takeDamage)
     {
-        enemyData.currentHealth -= damage;
-        slider.value = enemyData.currentHealth/enemyData.Health;
-        if (enemyData.currentHealth <= 0)
+        currentHealth -= takeDamage;
+        slider.value = currentHealth/enemyData.Health;
+        if (currentHealth <= 0)
         {
-            enemyData.Health = 0;
             slider.value = 0;
             Destroy(gameObject);
         }
