@@ -236,7 +236,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   healthImage: {fileID: 6221826970402297005}
   dashSpeed: 20
-  dashDuration: 0.2
+  dashDuration: 0.25
   DashCD: 1
   trailDash: {fileID: 498405841735142660}
 --- !u!95 &5208360488381705564
@@ -1387,7 +1387,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 1
+  m_Time: 0.25
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -1418,9 +1418,9 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0.78921485, b: 1, a: 1}
-      key1: {r: 0, g: 0.7882353, b: 1, a: 0.5019608}
-      key2: {r: 0, g: 0.7882353, b: 1, a: 0}
+      key0: {r: 0.7294118, g: 0.92941177, b: 1, a: 0.5882353}
+      key1: {r: 0.7294118, g: 0.92941177, b: 1, a: 0.29411766}
+      key2: {r: 0.7294118, g: 0.92941177, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}

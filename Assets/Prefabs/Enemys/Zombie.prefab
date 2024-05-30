@@ -109,7 +109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 49.35}
+  m_AnchoredPosition: {x: 0, y: 49.25}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4029921906501047977
@@ -175,9 +175,8 @@ GameObject:
   - component: {fileID: 1840177838594058032}
   - component: {fileID: 5860419085100963088}
   - component: {fileID: 9187301230368549234}
-  - component: {fileID: 1884401032669044416}
   - component: {fileID: 6282007255494571070}
-  - component: {fileID: -4082290705808762608}
+  - component: {fileID: 1040462803299998933}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Enemy
@@ -325,24 +324,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8368778, y: 0.5769615}
   m_EdgeRadius: 0
---- !u!114 &1884401032669044416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7404088636140579453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2389c8dd9f21551469d373bb2f8d4ce9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 696526262758798612, guid: 6f7a151a19a41e84083d5fad2200965b, type: 3}
-  followDistance: 7
-  minChangeTime: 1
-  maxChangeTime: 2
-  enemyData: {fileID: 11400000, guid: c45a14f770f7bfd42890b624deefc47d, type: 2}
-  slider: {fileID: 4029921906501047977}
 --- !u!95 &6282007255494571070
 Animator:
   serializedVersion: 5
@@ -364,7 +345,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-4082290705808762608
+--- !u!114 &1040462803299998933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -373,10 +354,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 7404088636140579453}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16b5a6abb71630941b02712c34b21262, type: 3}
+  m_Script: {fileID: 11500000, guid: 2389c8dd9f21551469d373bb2f8d4ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  followDistance: 7
+  minChangeTime: 1
+  maxChangeTime: 2
   enemyData: {fileID: 11400000, guid: c45a14f770f7bfd42890b624deefc47d, type: 2}
+  slider: {fileID: 4029921906501047977}
+  currentHealth: 0
 --- !u!1 &7826877134709535442
 GameObject:
   m_ObjectHideFlags: 0

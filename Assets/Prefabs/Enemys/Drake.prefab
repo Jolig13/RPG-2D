@@ -26,7 +26,7 @@ RectTransform:
   m_GameObject: {fileID: 6855475293298040695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.025, y: 0.001, z: 1}
+  m_LocalScale: {x: 0.007, y: 0.00025, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4056468647088648114}
@@ -174,9 +174,9 @@ GameObject:
   - component: {fileID: 8504178490270635101}
   - component: {fileID: 5261755600455373242}
   - component: {fileID: 7318077465272587262}
-  - component: {fileID: 7578198731309640262}
   - component: {fileID: 4922807885772581415}
   - component: {fileID: 1166681113059028688}
+  - component: {fileID: 54762596732065248}
   m_Layer: 0
   m_Name: Drake
   m_TagString: Enemy
@@ -273,24 +273,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7578198731309640262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7786966600442808895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2389c8dd9f21551469d373bb2f8d4ce9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 696526262758798612, guid: 6f7a151a19a41e84083d5fad2200965b, type: 3}
-  followDistance: 8
-  minChangeTime: 1
-  maxChangeTime: 1
-  enemyData: {fileID: 11400000, guid: 1f6a056430209af448eaa7c2c4cb9dfd, type: 2}
-  slider: {fileID: 9114166081254537692}
 --- !u!50 &4922807885772581415
 Rigidbody2D:
   serializedVersion: 4
@@ -363,6 +345,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6307205, y: 1.6819363}
   m_EdgeRadius: 0
+--- !u!114 &54762596732065248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7786966600442808895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75e5c1994e6ef4b4c9c2a44f02688cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  followDistance: 15
+  rangeAttack: 10
+  attackRate: 1
+  shootCD: 2
+  minChangeTime: 0.5
+  maxChangeTime: 2
+  enemyData: {fileID: 11400000, guid: 1f6a056430209af448eaa7c2c4cb9dfd, type: 2}
+  slider: {fileID: 9114166081254537692}
+  Proyectile: {fileID: 702952992509326521, guid: b82ebf3b5e90eb049be0b3d896f5209d, type: 3}
+  currentHealth: 0
 --- !u!1 &7876183515026942217
 GameObject:
   m_ObjectHideFlags: 0

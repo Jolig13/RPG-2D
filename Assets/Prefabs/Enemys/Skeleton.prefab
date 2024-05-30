@@ -26,7 +26,7 @@ RectTransform:
   m_GameObject: {fileID: 1984651511443270397}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.025, y: 0.001, z: 1}
+  m_LocalScale: {x: 0.007, y: 0.00025, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3193719077907256884}
@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 49.3}
+  m_AnchoredPosition: {x: 0, y: 49.45}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3305400639252570202
@@ -204,7 +204,6 @@ GameObject:
   - component: {fileID: 13615146511731476}
   - component: {fileID: 1268646469075558441}
   - component: {fileID: 8361178386974562255}
-  - component: {fileID: 4864282596429989505}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Enemy
@@ -319,6 +318,7 @@ MonoBehaviour:
   maxChangeTime: 4
   enemyData: {fileID: 11400000, guid: 86a73dcd4c0c0d747a9ffa36235c440f, type: 2}
   slider: {fileID: 3305400639252570202}
+  currentHealth: 0
 --- !u!50 &1268646469075558441
 Rigidbody2D:
   serializedVersion: 4
@@ -391,19 +391,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75132465, y: 1.1876643}
   m_EdgeRadius: 0
---- !u!114 &4864282596429989505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4624211285144330220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16b5a6abb71630941b02712c34b21262, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 86a73dcd4c0c0d747a9ffa36235c440f, type: 2}
 --- !u!1 &5826639510086842369
 GameObject:
   m_ObjectHideFlags: 0

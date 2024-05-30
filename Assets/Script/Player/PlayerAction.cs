@@ -28,7 +28,6 @@ public class PlayerAction : MonoBehaviour, IReceiveDamage
     [SerializeField] private float DashCD;
     private bool isDash ;
     private bool canDash ;
-    private Vector3 dashDirection;
     [SerializeField] private TrailRenderer trailDash;
     private void Awake() 
     {
@@ -69,7 +68,9 @@ public class PlayerAction : MonoBehaviour, IReceiveDamage
         if(isDash)
             {   
                 Debug.Log("Esta moviendose con Dash");
-                playerRb.MovePosition(transform.position+dashDirection*dashSpeed*Time.fixedDeltaTime);
+                //playerRb.AddForce(dashDirection*dashSpeed, ForceMode2D.Impulse);
+                playerRb.MovePosition(playerRb.position+input*dashSpeed*Time.fixedDeltaTime);
+                //playerRb.velocity =dashDirection*dashSpeed*Time.fixedDeltaTime;
                 return;
             }
     }
@@ -81,8 +82,6 @@ public class PlayerAction : MonoBehaviour, IReceiveDamage
     {
         if (callbackContext.performed && canDash)
         {   
-            //Debug.Log("Dash Activado"); 
-            dashDirection = input.normalized;
             StartCoroutine(Dashing());
         }
     }
@@ -118,7 +117,9 @@ public class PlayerAction : MonoBehaviour, IReceiveDamage
         canDash = false;
         isDash = true;
         //Debug.Log("La Fuerza se va a Aplicar");
-        playerRb.MovePosition(transform.position+dashDirection*dashSpeed*Time.fixedDeltaTime);
+        playerRb.MovePosition(playerRb.position+input*dashSpeed*Time.fixedDeltaTime);
+        //playerRb.AddForce(dashDirection*dashSpeed, ForceMode2D.Impulse);
+        //playerRb.velocity = dashDirection*dashSpeed*Time.fixedDeltaTime;
         //Debug.Log("Fuerza Aplicada");
         trailDash.emitting = true;
         yield return new WaitForSeconds(dashDuration);

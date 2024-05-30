@@ -128,7 +128,7 @@ RectTransform:
   m_GameObject: {fileID: 6526910216533869880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.025, y: 0.001, z: 1}
+  m_LocalScale: {x: 0.007, y: 0.00025, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7687925559297019748}
@@ -136,7 +136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 49.3}
+  m_AnchoredPosition: {x: 0, y: 49.6}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8594167569128010059
@@ -202,8 +202,8 @@ GameObject:
   - component: {fileID: 3200261358150535754}
   - component: {fileID: 3461663109370470677}
   - component: {fileID: 4536552049247597827}
-  - component: {fileID: 8823407132670119195}
   - component: {fileID: 9007286127643634828}
+  - component: {fileID: 6790946887270966003}
   m_Layer: 0
   m_Name: EyeFly
   m_TagString: Enemy
@@ -341,24 +341,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &8823407132670119195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7276012302932819574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2389c8dd9f21551469d373bb2f8d4ce9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 696526262758798612, guid: 6f7a151a19a41e84083d5fad2200965b, type: 3}
-  followDistance: 8
-  minChangeTime: 0.7
-  maxChangeTime: 3
-  enemyData: {fileID: 11400000, guid: 20395d98c7282674cbd37b9b66c851ee, type: 2}
-  slider: {fileID: 8594167569128010059}
 --- !u!95 &9007286127643634828
 Animator:
   serializedVersion: 5
@@ -380,6 +362,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6790946887270966003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7276012302932819574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75e5c1994e6ef4b4c9c2a44f02688cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  followDistance: 12
+  rangeAttack: 6
+  attackRate: 1
+  shootCD: 3
+  minChangeTime: 0.7
+  maxChangeTime: 3
+  enemyData: {fileID: 11400000, guid: 20395d98c7282674cbd37b9b66c851ee, type: 2}
+  slider: {fileID: 8594167569128010059}
+  Proyectile: {fileID: 702952992509326521, guid: 94d70b24e2e39794f8dfcd9bc19c3a74, type: 3}
+  currentHealth: 0
 --- !u!1 &8895670023164083994
 GameObject:
   m_ObjectHideFlags: 0
