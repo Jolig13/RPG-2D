@@ -1366,7 +1366,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 04dc551ca7f2b5441b3be6017dd909bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1418,9 +1418,9 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.7294118, g: 0.92941177, b: 1, a: 0.5882353}
-      key1: {r: 0.7294118, g: 0.92941177, b: 1, a: 0.29411766}
-      key2: {r: 0.7294118, g: 0.92941177, b: 1, a: 0}
+      key0: {r: 0.81568635, g: 0.89019614, b: 0.94117653, a: 1}
+      key1: {r: 0.8156863, g: 0.8901961, b: 0.9411765, a: 0.6862745}
+      key2: {r: 0.8156863, g: 0.8901961, b: 0.9411765, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -1457,7 +1457,7 @@ TrailRenderer:
   m_MaskInteraction: 0
   m_Autodestruct: 0
   m_Emitting: 0
-  m_ApplyActiveColorSpace: 1
+  m_ApplyActiveColorSpace: 0
 --- !u!1 &7204762251524090391
 GameObject:
   m_ObjectHideFlags: 0

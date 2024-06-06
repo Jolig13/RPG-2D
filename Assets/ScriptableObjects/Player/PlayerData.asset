@@ -15,4 +15,4 @@ MonoBehaviour:
   Health: 100
   currentHealth: 0
   damage: 10
-  speedMove: 7
+  speedMove: 10

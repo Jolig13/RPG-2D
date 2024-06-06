@@ -383,7 +383,7 @@ MonoBehaviour:
   maxChangeTime: 3
   enemyData: {fileID: 11400000, guid: 20395d98c7282674cbd37b9b66c851ee, type: 2}
   slider: {fileID: 8594167569128010059}
-  Proyectile: {fileID: 702952992509326521, guid: 94d70b24e2e39794f8dfcd9bc19c3a74, type: 3}
+  Proyectile: {fileID: 7456651695016499604, guid: bf0f31a723159f544b44390004b0ee24, type: 3}
   currentHealth: 0
 --- !u!1 &8895670023164083994
 GameObject:
