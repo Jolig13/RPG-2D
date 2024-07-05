@@ -47,7 +47,7 @@ public class EnemyRangeFollow : MonoBehaviour,IReceiveDamage
     
         float playerDistance = Vector2.Distance(transform.position, target.position);
 
-        if (playerDistance < followDistance && playerDistance > rangeAttack)
+        if (playerDistance <= followDistance && playerDistance >= rangeAttack)
         {
             followTarget = true;
         }
